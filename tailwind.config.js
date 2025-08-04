@@ -13,6 +13,9 @@ module.exports = {
           '100%': { opacity: 1, transform: 'scale(1)' },
         },
       },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      },
     },
   },
   plugins: [],

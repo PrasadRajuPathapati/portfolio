@@ -102,22 +102,23 @@ function App() {
         style={{ width: `${scrollProgress}%` }}
       />
 
-      <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 flex gap-6 px-10 py-3 rounded-full shadow-lg border border-white/30 backdrop-blur-md bg-white/20 hover:bg-white/30 transition duration-300">
-        {sections.map((section) => (
-          <Link
-            key={section.id}
-            to={section.id}
-            smooth={true}
-            duration={500}
-            offset={-70}
-            className="cursor-pointer font-medium text-gray-700 hover:text-green-800 transition"
-            activeClass="text-green-800 font-semibold"
-            spy={true}
-          >
-            {section.label}
-          </Link>
-        ))}
-      </nav>
+<nav className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 flex gap-4 sm:gap-6 px-6 sm:px-10 py-2 sm:py-3 rounded-full shadow-lg border border-white/30 backdrop-blur-md bg-white/20 hover:bg-white/30 transition duration-300">
+  {sections.map((section) => (
+    <Link
+      key={section.id}
+      to={section.id}
+      smooth={true}
+      duration={500}
+      offset={-70}
+      className="cursor-pointer text-sm sm:text-base font-medium text-gray-700 hover:text-green-800 transition"
+      activeClass="text-green-800 font-semibold"
+      spy={true}
+    >
+      {section.label}
+    </Link>
+  ))}
+</nav>
+
 
       <main className="pt-32 space-y-36 px-6 md:px-20 text-center">
         {/* Home */}

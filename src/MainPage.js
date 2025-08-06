@@ -178,38 +178,72 @@ function App() {
         </section>
 
 {/* Skills */}
-<section id="skills" className="max-w-5xl mx-auto text-left px-4 py-28">
-  <h2 className="text-4xl font-bold text-center text-black-500 mb-12">💻 My Skills</h2>
+{/* Skills Section */}
+<section id="skills" className="max-w-6xl mx-auto px-4 py-28">
+  <h2 className="text-4xl font-bold text-center text-green-500 mb-16">💻 My Skills</h2>
 
-  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-    {skills.map((skill, index) => (
-      <motion.div
-        key={index}
-        whileHover={{ scale: 1.03 }}
-        className="relative backdrop-blur-md bg-green-300/10 border border-green-400/30 rounded-xl p-6 group shadow-lg overflow-hidden transition-all duration-300"
-      >
-        <div className="flex justify-between items-center mb-4">
-          <h3 className="text-lg font-semibold text-black-200">{skill.name}</h3>
-          <span className="text-sm bg-green-500 text-white px-2 py-0.5 rounded-full shadow">
-            {skill.level}%
-          </span>
-        </div>
-
-        <div className="w-full bg-green-800/20 h-3 rounded-full overflow-hidden">
+  <div className="grid md:grid-cols-2 gap-12">
+    {/* Frontend */}
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      className="bg-green-300/10 border border-green-400/30 backdrop-blur-md rounded-xl p-6 shadow-lg"
+    >
+      <h3 className="text-2xl font-semibold text-black-400 mb-6">🖥️ Frontend</h3>
+      <div className="grid grid-cols-3 gap-6 text-center text-sm text-black">
+        {[
+          { name: "HTML", icon: "🌐" },
+          { name: "CSS", icon: "🎨" },
+          { name: "JavaScript", icon: "⚡" },
+          { name: "React", icon: "⚛️" },
+          { name: "Tailwind CSS", icon: "💨" },
+          { name: "Next.js", icon: "⏭️" },
+        ].map((skill, i) => (
           <motion.div
-            className="h-full bg-gradient-to-r from-green-400 to-green-600"
-            initial={{ width: 0 }}
-            animate={{ width: `${skill.level}%` }}
-            transition={{ duration: 1.2, delay: index * 0.1 }}
-          />
-        </div>
+            key={i}
+            whileHover={{ scale: 1.1 }}
+            className="flex flex-col items-center bg-white/10 p-4 rounded-lg hover:bg-green-400/20 transition duration-300"
+          >
+            <div className="text-2xl">{skill.icon}</div>
+            <span className="mt-2 text-black font-medium">{skill.name}</span>
+          </motion.div>
+        ))}
+      </div>
+    </motion.div>
 
-        <div className="absolute bottom-0 left-0 w-full h-1 bg-green-500 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
-      </motion.div>
-    ))}
+    {/* Backend */}
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.2 }}
+      viewport={{ once: true }}
+      className="bg-green-300/10 border border-green-400/30 backdrop-blur-md rounded-xl p-6 shadow-lg"
+    >
+      <h3 className="text-2xl font-semibold text-black-400 mb-6">🗄️ Backend</h3>
+      <div className="grid grid-cols-3 gap-6 text-center text-sm text-black">
+        {[
+          { name: "Node.js", icon: "🟢" },
+          { name: "Express.js", icon: "🚂" },
+          { name: "MongoDB", icon: "🍃" },
+          { name: "Firebase", icon: "🔥" },
+          { name: "MySQL", icon: "🐬" },
+          { name: "REST API", icon: "🔗" },
+        ].map((skill, i) => (
+          <motion.div
+            key={i}
+            whileHover={{ scale: 1.1 }}
+            className="flex flex-col items-center bg-white/10 p-4 rounded-lg hover:bg-green-400/20 transition duration-300"
+          >
+            <div className="text-2xl">{skill.icon}</div>
+            <span className="mt-2 text-black font-medium">{skill.name}</span>
+          </motion.div>
+        ))}
+      </div>
+    </motion.div>
   </div>
 </section>
-
 
 
         {/* Contact */}
